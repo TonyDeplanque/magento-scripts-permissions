@@ -35,5 +35,5 @@ find $PROJECT_PATH -type f -not -path "$SCRIPT_PATH" -not -path "$CONF_PATH_FILE
 find $PROJECT_PATH/generated $PROJECT_PATH/var $PROJECT_PATH/vendor $PROJECT_PATH/pub/static $PROJECT_PATH/pub/media $PROJECT_PATH/app/etc -type f -exec chmod g+w {} \;
 find $PROJECT_PATH/generated $PROJECT_PATH/var $PROJECT_PATH/vendor $PROJECT_PATH/pub/static $PROJECT_PATH/pub/media $PROJECT_PATH/app/etc -type d -exec chmod g+w {} \;
 
-chgrp -R www-data $PROJECT_PATH
+chown -R $PROJECT_USER:$WEBSERVER_GROUP $PROJECT_PATH
 chmod g+x $PROJECT_PATH/bin/magento
